@@ -28,6 +28,11 @@ export default function CheckinPage() {
   const [status, setStatus] = useState<CheckinStatus | null>(null);
   const [activeSession, setActiveSession] = useState<ActiveSessionData | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  
+  // Manual Entry States
+  const [showManualModal, setShowManualModal] = useState(false);
+  const [manualCode, setManualCode] = useState('');
+  const manualInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     fetch('/api/sessions/active')
@@ -37,15 +42,14 @@ export default function CheckinPage() {
       });
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!studentCode.trim()) return;
+  const processCheckin = async (codeToSubmit: string, isManual = false) => {
+    if (!codeToSubmit.trim()) return;
 
     try {
       const res = await fetch('/api/checkin', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ studentCode: studentCode.trim() })
+        body: JSON.stringify({ studentCode: codeToSubmit.trim() })
       });
       const data = await res.json();
 
@@ -60,13 +64,13 @@ export default function CheckinPage() {
           setStatus({
             type: 'duplicate',
             message: 'แจ้งเตือน: สแกนซ้ำในรอบนี้',
-            subMessage: `รหัสนิสิต ${studentCode} ได้สแกนชื่อในรอบนี้ไปแล้ว`,
+            subMessage: `รหัสนิสิต ${codeToSubmit} ได้สแกนชื่อในรอบนี้ไปแล้ว`,
           });
         } else if (data.error === 'NOT_FOUND') {
           setStatus({
             type: 'error',
             message: 'ข้อผิดพลาด: ไม่พบข้อมูลนิสิต',
-            subMessage: `ไม่พบรหัสบาร์โค้ด ${studentCode} ในระบบ`,
+            subMessage: `ไม่พบรหัสบาร์โค้ด ${codeToSubmit} ในระบบ`,
           });
         } else {
           setStatus({
@@ -84,9 +88,29 @@ export default function CheckinPage() {
       });
     }
 
-    setStudentCode('');
-    inputRef.current?.focus();
+    if (isManual) {
+      setManualCode('');
+      manualInputRef.current?.focus();
+    } else {
+      setStudentCode('');
+      inputRef.current?.focus();
+    }
+    
     setTimeout(() => setStatus(null), 5000);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    processCheckin(studentCode, false);
+  };
+
+  const handleManualSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    processCheckin(manualCode, true);
+    setShowManualModal(false); // Close modal on submit
+    setTimeout(() => {
+      inputRef.current?.focus(); // Return focus to main scanner
+    }, 100);
   };
 
   return (
@@ -151,13 +175,21 @@ export default function CheckinPage() {
               autoComplete="off"
               disabled={!activeSession}
             />
-            <button
-              type="submit"
-              disabled={!activeSession || !studentCode.trim()}
-              className="absolute inset-y-2 right-2 px-6 bg-primary hover:bg-primary-dark text-white font-bold rounded-lg transition-colors disabled:opacity-50"
-            >
-              บันทึก ➔
-            </button>
+              <button
+                type="button"
+                onClick={() => setShowManualModal(true)}
+                disabled={!activeSession}
+                className="absolute inset-y-2 right-32 px-4 text-text-muted hover:text-primary font-medium rounded-lg transition-colors disabled:opacity-50 flex items-center gap-2"
+              >
+                ⌨️ พิมพ์รหัส
+              </button>
+              <button
+                type="submit"
+                disabled={!activeSession || !studentCode.trim()}
+                className="absolute inset-y-2 right-2 px-6 bg-primary hover:bg-primary-dark text-white font-bold rounded-lg transition-colors disabled:opacity-50"
+              >
+                บันทึก ➔
+              </button>
           </form>
 
           <p className="mt-4 text-sm text-text-muted flex items-center gap-2">
@@ -212,6 +244,54 @@ export default function CheckinPage() {
         </div>
 
       </div>
+
+      {/* Manual Entry Modal */}
+      {showManualModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-xl shadow-xl w-full max-w-md overflow-hidden animate-[slideIn_0.2s_ease-out]">
+            <div className="px-6 py-4 border-b border-border flex justify-between items-center bg-surface">
+              <h3 className="text-lg font-bold text-text-main flex items-center gap-2">
+                ⌨️ บันทึกรหัสนิสิตแบบแมนนวล
+              </h3>
+              <button onClick={() => setShowManualModal(false)} className="text-text-muted hover:text-error text-xl font-bold">
+                ×
+              </button>
+            </div>
+            <div className="p-6">
+              <form onSubmit={handleManualSubmit}>
+                <label className="block text-sm font-medium text-text-main mb-2">
+                  รหัสประจำตัวนิสิต
+                </label>
+                <input
+                  ref={manualInputRef}
+                  type="text"
+                  value={manualCode}
+                  onChange={(e) => setManualCode(e.target.value)}
+                  placeholder="กรอกรหัสนิสิต (เช่น 66012345)"
+                  className="w-full px-4 py-3 bg-white border border-border rounded-lg text-lg font-mono focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary-light"
+                  autoFocus
+                />
+                <div className="mt-6 flex justify-end gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setShowManualModal(false)}
+                    className="px-4 py-2 text-text-muted hover:bg-gray-100 rounded-lg font-medium transition-colors"
+                  >
+                    ยกเลิก
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={!manualCode.trim()}
+                    className="px-6 py-2 bg-primary hover:bg-primary-dark text-white font-bold rounded-lg transition-colors disabled:opacity-50"
+                  >
+                    บันทึกข้อมูล
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
