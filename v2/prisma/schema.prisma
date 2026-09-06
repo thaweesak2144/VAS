@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String   // bcrypt hash, rounds=10
+  createdAt DateTime @default(now())
+}
+
+model Student {
+  id           Int          @id @default(autoincrement())
+  studentCode  String       @unique  // รหัสนิสิต = ค่าจาก Barcode Code 128
+  fullName     String
+  groupName    String
+  createdAt    DateTime     @default(now())
+  attendances  Attendance[]
+}
+
+model Session {
+  id          Int          @id @default(autoincrement())
+  dayNumber   Int          // 1–10
+  roundNumber Int          // 1–4
+  roundName   String       // "รอบเช้ามืด" | "รอบเช้า" | "รอบบ่าย" | "รอบเย็น"
+  sessionDate DateTime
+  startTime   String       // "04:00" | "08:00" | "13:00" | "16:00"
+  endTime     String       // "04:30" | "08:30" | "13:30" | "16:30"
+  isActive    Boolean      @default(false)
+  createdAt   DateTime     @default(now())
+  attendances Attendance[]
+  @@unique([dayNumber, roundNumber])
+}
+
+model Attendance {
+  id         Int      @id @default(autoincrement())
+  studentId  Int
+  sessionId  Int
+  scannedAt  DateTime @default(now())
+  student    Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  session    Session  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  @@unique([studentId, sessionId])
+}

@@ -1,0 +1,29 @@
+# Ignore large files and sensitive data
+Theme.zip.zip
+*.zip
+
+# Node.js
+v2/node_modules/
+v2/.next/
+
+# Database
+v2/prisma/dev.db
+v2/prisma/dev.db-journal
+
+# Environment
+v2/.env
+v2/.env*.local
+
+# Build artifacts
+v2/build/
+v2/out/
+v2/.vercel
+
+# TypeScript
+v2/*.tsbuildinfo
+v2/next-env.d.ts
+
+# Misc
+.DS_Store
+*.pem
+npm-debug.log*

@@ -1,0 +1,641 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary": "#00443e", "tertiary-fixed-dim": "#6bd8cb", "outline-variant": "#bec9c2", "inverse-on-surface": "#eff1f3", "on-secondary-container": "#1d3989", "surface-dim": "#d8dadc", "on-surface-variant": "#3f4944", "secondary-fixed": "#dce1ff", "surface": "#f7f9fb", "secondary": "#4059aa", "error-container": "#ffdad6", "on-secondary": "#ffffff", "on-secondary-fixed-variant": "#264191", "outline": "#6f7973", "on-primary": "#ffffff", "on-error-container": "#93000a", "primary-container": "#065f46", "on-tertiary": "#ffffff", "tertiary-fixed": "#89f5e7", "on-primary-fixed-variant": "#00513b", "tertiary-container": "#005e56", "inverse-primary": "#8bd6b6", "primary": "#004532", "on-background": "#191c1e", "on-primary-fixed": "#002116", "on-tertiary-container": "#6cd9cb", "primary-fixed": "#a6f2d1", "on-surface": "#191c1e", "secondary-fixed-dim": "#b6c4ff", "secondary-container": "#8fa7fe", "surface-container-lowest": "#ffffff", "surface-variant": "#e0e3e5", "surface-bright": "#f7f9fb", "background": "#f7f9fb", "on-error": "#ffffff", "on-secondary-fixed": "#00164e", "inverse-surface": "#2d3133", "on-tertiary-fixed-variant": "#005049", "surface-tint": "#1b6b51", "on-primary-container": "#8bd6b7", "error": "#ba1a1a", "on-tertiary-fixed": "#00201d", "primary-fixed-dim": "#8bd6b6", "surface-container-low": "#f2f4f6", "surface-container": "#eceef0", "surface-container-highest": "#e0e3e5", "surface-container-high": "#e6e8ea" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2rem", "margin-tablet": "2rem", "space-3xl": "4rem", "max-content-width": "1280px", "space-2xl": "3rem", "space-md": "1rem", "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-2xs": "0.25rem", "space-lg": "1.5rem", "gutter-desktop": "1.5rem", "space-xs": "0.5rem", "space-sm": "0.75rem", "margin-desktop": "3rem" }, "fontFamily": { "headline-md": [ "Plus Jakarta Sans" ], "body-md": [ "Inter" ], "body-lg": [ "Inter" ], "title-lg": [ "Inter" ], "display-lg-mobile": [ "Plus Jakarta Sans" ], "display-lg": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "label-md": [ "Inter" ], "label-lg": [ "Inter" ], "code-md": [ "JetBrains Mono" ], "headline-sm": [ "Plus Jakarta Sans" ], "body-sm": [ "Inter" ], "label-sm": [ "Inter" ] }, "fontSize": { "headline-md": [ "22px", { "lineHeight": "28px", "fontWeight": "600" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "title-lg": [ "16px", { "lineHeight": "22px", "fontWeight": "600" } ], "display-lg-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "display-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" } ], "code-md": [ "13px", { "lineHeight": "18px", "fontWeight": "500" } ], "headline-sm": [ "18px", { "lineHeight": "24px", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between py-space-lg"><div class="flex flex-col"><div class="px-space-lg mb-space-xl flex items-center gap-space-sm"><img alt="Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmjKxjdliEo4WXHqxdy5J4OjIahL63X13dbD0Bp_d-RMBSmOKXxYh7yl7h7bWsNIqSOAoGP5wdn5_zipGLfAzmdbJgE-cTERMjuG1IqLjrrGQVH-BHTv-74-LEx0ZiHZoMaGNAgIRzXABXfls54UyI2xY6Uaul-hsklgFBz7Bm__-mqdIoezaFIzy8VidB86PGLx1mpBL94KnplWvw1fNDfBJOpFIzAK80p2rMMOvzdGS74G-Ow3Mz"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">ระบบบันทึกเวลา</span><span class="font-label-sm text-label-sm text-on-surface-variant">ปฏิบัติธรรมวิปัสสนาฯ</span></div></div><div class="px-space-md mb-space-sm"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-outline">เมนูหลัก</span></div><nav class="flex flex-col gap-space-2xs px-space-md" data-active-classes="bg-primary-container text-on-primary font-title-lg text-title-lg"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-lg text-label-lg">ภาพรวมระบบ</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="checkin" href="#"><span class="material-symbols-outlined text-[20px]">qr_code_scanner</span><span class="font-label-lg text-label-lg">จุดสแกนเช็คชื่อ</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg transition-colors bg-primary-container text-on-primary font-title-lg text-title-lg" data-path="attendance-matrix" href="#"><span class="material-symbols-outlined text-[20px]">grid_on</span><span class="font-label-lg text-label-lg">ตารางประเมินผล 40 รอบ</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="students" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-label-lg text-label-lg">จัดการนิสิตและกลุ่ม</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="student-self-service" href="#"><span class="material-symbols-outlined text-[20px]">person_search</span><span class="font-label-lg text-label-lg">สำหรับนิสิต (ตรวจผล)</span></a></nav></div><div class="px-space-md flex flex-col gap-space-xs"><div class="p-space-md rounded-xl bg-surface-container-low flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[22px]">spa</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold">ศาลาปฏิบัติธรรมกลาง</span><span class="font-body-sm text-body-sm text-on-surface-variant">รอบที่ 14/40 • ภาวนากลางวัน</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><img alt="Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmjKxjdliEo4WXHqxdy5J4OjIahL63X13dbD0Bp_d-RMBSmOKXxYh7yl7h7bWsNIqSOAoGP5wdn5_zipGLfAzmdbJgE-cTERMjuG1IqLjrrGQVH-BHTv-74-LEx0ZiHZoMaGNAgIRzXABXfls54UyI2xY6Uaul-hsklgFBz7Bm__-mqdIoezaFIzy8VidB86PGLx1mpBL94KnplWvw1fNDfBJOpFIzAK80p2rMMOvzdGS74G-Ow3Mz"><span class="px-space-sm py-space-2xs rounded-full bg-surface-container-high font-label-sm text-label-sm text-on-surface flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary"></span>โครงการปฏิบัติธรรม 10 วัน (รุ่นที่ 12)</span><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-tertiary-container">event</span><span>วันพฤหัสบดีที่ 24 ตุลาคม 2567</span><span class="text-outline-variant">•</span><span class="font-code-md text-code-md text-on-surface">14:35 น.</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><span>ช่วงที่ 3: เดินจงกรม (หอธรรม)</span></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right"><span class="font-label-lg text-label-lg text-on-surface leading-tight">พระอาจารย์ประสิทธิ์</span><span class="font-label-sm text-label-sm text-on-surface-variant">ผู้ดูแลระบบ (Admin)</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full px-space-lg py-space-lg space-y-space-lg max-w-full">
+<!-- Top Bar: Title & Primary Actions -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="space-y-space-2xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span>ทะเบียนและประเมินผล</span>
+<span>/</span>
+<span class="text-primary font-semibold">รายงานความก้าวหน้า 40 รอบ</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">ตารางสรุปการเข้าร่วมปฏิบัติธรรม 10 วัน (40 รอบ)</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">เกณฑ์ขั้นต่ำการสำเร็จหลักสูตร: เข้าร่วมไม่น้อยกว่า 80% (32 รอบขึ้นไป) ตามข้อกำหนดสภาวิชาการ</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container-lowest text-secondary font-label-lg text-label-lg shadow-sm hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">query_stats</span>
+<span>สรุปสถิติประจำรุ่น</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container-lowest text-on-surface-variant font-label-lg text-label-lg shadow-sm hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>พิมพ์รายงาน / ใบประกาศ</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg shadow-md hover:bg-primary transition-transform active:scale-95" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Export Excel (.xlsx)</span>
+</button>
+</div>
+</div>
+<!-- KPI Overview Metrics Bento Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Total Students -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">นิสิตลงทะเบียนทั้งหมด</span>
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg text-on-surface">245</span>
+<span class="font-label-md text-label-md text-on-surface-variant">คน</span>
+</div>
+<div class="mt-space-xs flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>แบ่งออกเป็น 4 กลุ่มอาคารวิปัสสนา</span>
+</div>
+<!-- Background subtle decorative wave -->
+<div class="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-primary/5 pointer-events-none"></div>
+</div>
+<!-- Met Requirement -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">ผ่านเกณฑ์สะสม (≥80% หรือ ≥32 รอบ)</span>
+<div class="w-9 h-9 rounded-full bg-primary-fixed/40 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg text-primary-container">229</span>
+<span class="font-label-md text-label-md text-primary font-semibold">93.5%</span>
+</div>
+<div class="mt-space-xs w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 93.5%"></div>
+</div>
+</div>
+<!-- At Risk / Action Needed -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">ต้องติดตามใกล้ชิด (&lt;80%)</span>
+<div class="w-9 h-9 rounded-full bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg text-error">16</span>
+<span class="font-label-md text-label-md text-on-surface-variant">คน (6.5%)</span>
+</div>
+<div class="mt-space-xs flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span>อาจารย์พี่เลี้ยงติดต่อแล้ว</span>
+<span class="text-on-surface font-semibold">12/16</span>
+</div>
+</div>
+<!-- Overall Attendance Avg with Sparkline -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">อัตราการเข้าปฏิบัติรวมทุกรอบ</span>
+<div class="w-9 h-9 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">timeline</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-center justify-between">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg text-secondary">94.8%</span>
+</div>
+<!-- Sparkline SVG -->
+<svg class="w-20 h-9 text-secondary-container" fill="none" viewBox="0 0 100 35" xmlns="http://www.w3.org/2000/svg">
+<path class="text-secondary" d="M0 25 Q 15 28 30 18 T 60 12 T 90 6 L 100 8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0 25 Q 15 28 30 18 T 60 12 T 90 6 L 100 8 L 100 35 L 0 35 Z" fill="currentColor" opacity="0.25"></path>
+</svg>
+</div>
+<div class="mt-space-xs text-outline font-label-sm text-label-sm">
+<span>ประเมิน ณ วันที่ 4 • รอบที่ 15/40</span>
+</div>
+</div>
+</div>
+<!-- Filter & Controls Toolbar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-sm">
+<!-- Left Filters -->
+<div class="flex flex-wrap items-center gap-space-xs flex-1">
+<!-- Search Input -->
+<div class="relative min-w-[240px] flex-1 max-w-sm">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-3 py-2 text-body-md font-body-md rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all" placeholder="ค้นหารหัสนิสิต, ชื่อ-สกุล..." type="text">
+</div>
+<!-- Group Selector Dropdown -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low text-on-surface font-label-md text-label-md pl-3 pr-8 py-2 rounded-lg cursor-pointer hover:bg-surface-container-high focus:outline-none focus:ring-2 focus:ring-primary">
+<option value="all">ทุกกลุ่มปฏิบัติการ (1-4)</option>
+<option value="1">กลุ่ม 1 (หอวิปัสสนาทิศเหนือ)</option>
+<option value="2">กลุ่ม 2 (หอวิปัสสนาทิศใต้)</option>
+<option value="3">กลุ่ม 3 (ศาลาธรรม 80 ปี)</option>
+<option value="4">กลุ่ม 4 (เรือนพักภาวนาสงฆ์/ฆราวาส)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-[16px] pointer-events-none text-outline">expand_more</span>
+</div>
+<!-- Status Filter -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low text-on-surface font-label-md text-label-md pl-3 pr-8 py-2 rounded-lg cursor-pointer hover:bg-surface-container-high focus:outline-none focus:ring-2 focus:ring-primary">
+<option value="all">สถานะทั้งหมด</option>
+<option value="pass">ผ่านเกณฑ์ปกติ (≥80%)</option>
+<option value="perfect">เข้าร่วมครบ 100% (ยอดเยี่ยม)</option>
+<option value="risk">กลุ่มเสี่ยงไม่ผ่าน (&lt;80%)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-[16px] pointer-events-none text-outline">expand_more</span>
+</div>
+<!-- Day Filter Segment -->
+<div class="flex items-center bg-surface-container-low rounded-lg p-1">
+<button class="px-space-xs py-1 rounded font-label-sm text-label-sm bg-primary-container text-on-primary shadow-xs" type="button">ทุกวัน (1-10)</button>
+<button class="px-space-xs py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">วันที่ 1-5</button>
+<button class="px-space-xs py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">วันที่ 6-10</button>
+<button class="px-space-xs py-1 rounded font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+            วันนี้ (วันที่ 4)
+          </button>
+</div>
+</div>
+<!-- Live Sync status badge -->
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm self-end lg:self-center">
+<span class="material-symbols-outlined text-[16px] text-primary">sync</span>
+<span>อัปเดตอัตโนมัติจากจุดสแกน Real-time</span>
+</div>
+</div>
+<!-- Quick Legend bar -->
+<div class="flex flex-wrap items-center justify-between pt-space-xs text-label-sm font-label-sm text-on-surface-variant bg-surface-container-lowest">
+<div class="flex flex-wrap items-center gap-space-md">
+<span class="font-semibold text-on-surface">สัญลักษณ์:</span>
+<div class="flex items-center gap-1.5">
+<span class="w-4 h-4 rounded-full bg-primary-container/20 text-primary-container flex items-center justify-center text-[10px] font-bold">✓</span>
+<span>เข้าร่วม (ตรงเวลา)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-4 h-4 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center text-[10px] font-bold">L</span>
+<span>สาย / มีกิจธุระ</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-4 h-4 rounded-full bg-error-container text-error flex items-center justify-center text-[10px] font-bold">✕</span>
+<span>ขาดรอบปฏิบัติ</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-4 h-4 rounded-full bg-primary/20 text-primary flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+</span>
+<span class="text-primary font-semibold">รอบปัจจุบัน (ว.4 ร.3)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded-full bg-surface-container-high inline-block"></span>
+<span>ยังไม่เริ่มรอบ</span>
+</div>
+</div>
+<div class="text-outline">
+        เกณฑ์มาตรฐาน: 32 / 40 รอบ (80.00%)
+      </div>
+</div>
+</div>
+<!-- Master Data Matrix Table Viewport -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Scrollable container with fixed left columns -->
+<div class="overflow-x-auto w-full max-w-full">
+<table class="w-full text-left border-collapse select-none">
+<!-- Table Header -->
+<thead class="bg-surface-container-low text-on-surface font-label-sm text-label-sm select-none">
+<!-- Row 1: Grouping for days and stats -->
+<tr class="bg-surface-container">
+<th class="sticky left-0 z-30 bg-surface-container px-space-md py-2.5 text-on-surface font-semibold" colspan="3">ข้อมูลนิสิต</th>
+<th class="text-center px-1 py-2 text-primary font-semibold bg-surface-container-high" colspan="4">วันที่ 1 (18 ต.ค.)</th>
+<th class="text-center px-1 py-2 text-primary font-semibold" colspan="4">วันที่ 2 (19 ต.ค.)</th>
+<th class="text-center px-1 py-2 text-primary font-semibold bg-surface-container-high" colspan="4">วันที่ 3 (20 ต.ค.)</th>
+<th class="text-center px-1 py-2 text-primary-container font-bold bg-primary-fixed/30" colspan="4">
+<div class="flex items-center justify-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>วันที่ 4 (วันนี้)</span>
+</div>
+</th>
+<th class="text-center px-1 py-2 text-outline" colspan="4">วันที่ 5</th>
+<th class="text-center px-1 py-2 text-outline bg-surface-container-high" colspan="4">วันที่ 6</th>
+<th class="text-center px-1 py-2 text-outline" colspan="4">วันที่ 7</th>
+<th class="text-center px-1 py-2 text-outline bg-surface-container-high" colspan="4">วันที่ 8</th>
+<th class="text-center px-1 py-2 text-outline" colspan="4">วันที่ 9</th>
+<th class="text-center px-1 py-2 text-outline bg-surface-container-high" colspan="4">วันที่ 10</th>
+<th class="sticky right-0 z-30 bg-surface-container text-center px-space-md py-2 font-semibold" colspan="3">สรุปผลการประเมิน</th>
+</tr>
+<!-- Row 2: Sub-sessions (Sessions 1 to 4 each day) -->
+<tr class="bg-surface-container-low text-on-surface-variant font-code-md text-[11px]">
+<th class="sticky left-0 z-30 bg-surface-container-low px-space-sm py-2 w-24">รหัสนิสิต</th>
+<th class="sticky left-24 z-30 bg-surface-container-low px-space-sm py-2 min-w-[170px]">ชื่อ - ฉายา / นามสกุล</th>
+<th class="sticky left-[266px] z-30 bg-surface-container-low px-space-xs py-2 w-16 text-center shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">กลุ่ม</th>
+<!-- Day 1 Sessions (1-4) -->
+<th class="text-center w-7 py-2 bg-surface-container-high">1</th>
+<th class="text-center w-7 py-2 bg-surface-container-high">2</th>
+<th class="text-center w-7 py-2 bg-surface-container-high">3</th>
+<th class="text-center w-7 py-2 bg-surface-container-high">4</th>
+<!-- Day 2 Sessions (5-8) -->
+<th class="text-center w-7 py-2">1</th>
+<th class="text-center w-7 py-2">2</th>
+<th class="text-center w-7 py-2">3</th>
+<th class="text-center w-7 py-2">4</th>
+<!-- Day 3 Sessions (9-12) -->
+<th class="text-center w-7 py-2 bg-surface-container-high">1</th>
+<th class="text-center w-7 py-2 bg-surface-container-high">2</th>
+<th class="text-center w-7 py-2 bg-surface-container-high">3</th>
+<th class="text-center w-7 py-2 bg-surface-container-high">4</th>
+<!-- Day 4 Sessions (13-16) Current Day Active -->
+<th class="text-center w-7 py-2 bg-primary-fixed/20 text-on-surface">1</th>
+<th class="text-center w-7 py-2 bg-primary-fixed/20 text-on-surface">2</th>
+<th class="text-center w-7 py-2 bg-primary-fixed/50 font-bold text-primary">3*</th>
+<th class="text-center w-7 py-2 bg-primary-fixed/20 text-outline">4</th>
+<!-- Day 5 to 10 (Abbreviated headers) -->
+<!-- D5 -->
+<th class="text-center w-6 py-2 text-outline-variant">1</th><th class="text-center w-6 py-2 text-outline-variant">2</th><th class="text-center w-6 py-2 text-outline-variant">3</th><th class="text-center w-6 py-2 text-outline-variant">4</th>
+<!-- D6 -->
+<th class="text-center w-6 py-2 text-outline-variant bg-surface-container-high">1</th><th class="text-center w-6 py-2 text-outline-variant bg-surface-container-high">2</th><th class="text-center w-6 py-2 text-outline-variant bg-surface-container-high">3</th><th class="text-center w-6 py-2 text-outline-variant bg-surface-container-high">4</th>
+<!-- D7 -->
+<th class="text-center w-6 py-2 text-outline-variant">1</th><th class="text-center w-6 py-2 text-outline-variant">2</th><th class="text-center w-6 py-2 text-outline-variant">3</th><th class="text-center w-6 py-2 text-outline-variant">4</th>
+<!-- D8 -->
+<th class="text-center w-6 py-2 text-outline-variant bg-surface-container-high">1</th><th class="text-center w-6 py-2 text-outline-variant bg-surface-container-high">2</th><th class="text-center w-6 py-2 text-outline-variant bg-surface-container-high">3</th><th class="text-center w-6 py-2 text-outline-variant bg-surface-container-high">4</th>
+<!-- D9 -->
+<th class="text-center w-6 py-2 text-outline-variant">1</th><th class="text-center w-6 py-2 text-outline-variant">2</th><th class="text-center w-6 py-2 text-outline-variant">3</th><th class="text-center w-6 py-2 text-outline-variant">4</th>
+<!-- D10 -->
+<th class="text-center w-6 py-2 text-outline-variant bg-surface-container-high">1</th><th class="text-center w-6 py-2 text-outline-variant bg-surface-container-high">2</th><th class="text-center w-6 py-2 text-outline-variant bg-surface-container-high">3</th><th class="text-center w-6 py-2 text-outline-variant bg-surface-container-high">4</th>
+<!-- Sticky Right Summaries -->
+<th class="sticky right-36 z-30 bg-surface-container-low text-center w-16 py-2 font-semibold">เข้า (รอบ)</th>
+<th class="sticky right-20 z-30 bg-surface-container-low text-center w-16 py-2 font-semibold">% สะสม</th>
+<th class="sticky right-0 z-30 bg-surface-container-low text-center w-20 py-2 font-semibold shadow-[-2px_0_5px_-2px_rgba(0,0,0,0.05)]">สถานะ</th>
+</tr>
+</thead>
+<!-- Matrix Body Rows -->
+<tbody class="divide-y divide-surface-container-high font-body-md text-body-md text-on-surface">
+<!-- Row 1: Perfect Student -->
+<tr class="hover:bg-primary-fixed/10 transition-colors group">
+<td class="sticky left-0 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-sm py-2.5 font-code-md text-code-md font-semibold text-primary">66010042</td>
+<td class="sticky left-24 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-sm py-2.5 whitespace-nowrap font-title-lg text-title-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-[10px] font-bold">ภ</span>
+<span>พระมหาธีรภัทร ชิตญาโณ</span>
+</div>
+</td>
+<td class="sticky left-[266px] z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-xs py-2.5 text-center shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">ก.1</span>
+</td>
+<!-- Day 1 (4/4) -->
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<!-- Day 2 (4/4) -->
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<!-- Day 3 (4/4) -->
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<!-- Day 4 (Live) -->
+<td class="text-center bg-primary-fixed/20"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-primary-fixed/20"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-primary-fixed/40"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-primary-fixed/20"><span class="w-2 h-2 rounded-full bg-outline-variant inline-block"></span></td>
+<!-- Day 5-10 pending dots -->
+<td class="text-center" colspan="24">
+<div class="flex items-center justify-around px-2 text-outline-variant text-[10px]">
+<span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span>
+</div>
+</td>
+<!-- Sticky Summary -->
+<td class="sticky right-36 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center font-semibold text-primary font-code-md">15/15</td>
+<td class="sticky right-20 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center font-bold text-primary">100%</td>
+<td class="sticky right-0 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center px-space-xs shadow-[-2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-[11px]">ดีเยี่ยม</span>
+</td>
+</tr>
+<!-- Row 2: Standard Passed Student -->
+<tr class="hover:bg-primary-fixed/10 transition-colors group">
+<td class="sticky left-0 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-sm py-2.5 font-code-md text-code-md font-semibold text-primary">66010058</td>
+<td class="sticky left-24 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-sm py-2.5 whitespace-nowrap font-title-lg text-title-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center text-[10px] font-bold">น</span>
+<span>นายกานต์ สัจจาภิรมย์</span>
+</div>
+</td>
+<td class="sticky left-[266px] z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-xs py-2.5 text-center shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">ก.2</span>
+</td>
+<!-- Day 1 -->
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<!-- Day 2 -->
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center"><span class="text-secondary font-bold text-[11px]">L</span></td>
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<!-- Day 3 -->
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<!-- Day 4 -->
+<td class="text-center bg-primary-fixed/20"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-primary-fixed/20"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-primary-fixed/40"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-primary-fixed/20"><span class="w-2 h-2 rounded-full bg-outline-variant inline-block"></span></td>
+<!-- Remaining -->
+<td class="text-center" colspan="24">
+<div class="flex items-center justify-around px-2 text-outline-variant text-[10px]">
+<span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span>
+</div>
+</td>
+<td class="sticky right-36 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center font-semibold font-code-md">15/15</td>
+<td class="sticky right-20 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center font-semibold text-primary">100%</td>
+<td class="sticky right-0 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center px-space-xs shadow-[-2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-[11px]">ผ่านเกณฑ์</span>
+</td>
+</tr>
+<!-- Row 3: Student with Absent Round (Warning / Risk Case) -->
+<tr class="hover:bg-error-container/20 transition-colors group">
+<td class="sticky left-0 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-sm py-2.5 font-code-md text-code-md font-semibold text-error">66010114</td>
+<td class="sticky left-24 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-sm py-2.5 whitespace-nowrap font-title-lg text-title-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-error-container text-error flex items-center justify-center text-[10px] font-bold">ส</span>
+<span>นางสาวกัญญา วงศ์สุวรรณ</span>
+</div>
+</td>
+<td class="sticky left-[266px] z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-xs py-2.5 text-center shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">ก.1</span>
+</td>
+<!-- Day 1 -->
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-error font-bold text-xs">✕</span></td>
+<!-- Day 2 -->
+<td class="text-center"><span class="text-error font-bold text-xs">✕</span></td>
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center"><span class="text-error font-bold text-xs">✕</span></td>
+<!-- Day 3 -->
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-error font-bold text-xs">✕</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<!-- Day 4 -->
+<td class="text-center bg-primary-fixed/20"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-primary-fixed/20"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-primary-fixed/40"><span class="text-error font-bold text-xs">✕</span></td>
+<td class="text-center bg-primary-fixed/20"><span class="w-2 h-2 rounded-full bg-outline-variant inline-block"></span></td>
+<!-- Remaining -->
+<td class="text-center" colspan="24">
+<div class="flex items-center justify-around px-2 text-outline-variant text-[10px]">
+<span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span>
+</div>
+</td>
+<td class="sticky right-36 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center font-semibold text-error font-code-md">10/15</td>
+<td class="sticky right-20 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center font-bold text-error">66.6%</td>
+<td class="sticky right-0 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center px-space-xs shadow-[-2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-error-container text-error font-label-sm text-[11px] font-semibold">เสี่ยงตก</span>
+</td>
+</tr>
+<!-- Row 4: Passing Student with 1 Excuse -->
+<tr class="hover:bg-primary-fixed/10 transition-colors group">
+<td class="sticky left-0 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-sm py-2.5 font-code-md text-code-md font-semibold text-primary">66010189</td>
+<td class="sticky left-24 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-sm py-2.5 whitespace-nowrap font-title-lg text-title-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center text-[10px] font-bold">ว</span>
+<span>พระวิชัย ญาณรังสี</span>
+</div>
+</td>
+<td class="sticky left-[266px] z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-xs py-2.5 text-center shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">ก.3</span>
+</td>
+<!-- Day 1 -->
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<!-- Day 2 -->
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center"><span class="text-error font-bold text-xs">✕</span></td>
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<!-- Day 3 -->
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<!-- Day 4 -->
+<td class="text-center bg-primary-fixed/20"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-primary-fixed/20"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-primary-fixed/40"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-primary-fixed/20"><span class="w-2 h-2 rounded-full bg-outline-variant inline-block"></span></td>
+<!-- Remaining -->
+<td class="text-center" colspan="24">
+<div class="flex items-center justify-around px-2 text-outline-variant text-[10px]">
+<span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span>
+</div>
+</td>
+<td class="sticky right-36 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center font-semibold font-code-md">14/15</td>
+<td class="sticky right-20 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center font-semibold text-primary">93.3%</td>
+<td class="sticky right-0 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center px-space-xs shadow-[-2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-[11px]">ผ่านเกณฑ์</span>
+</td>
+</tr>
+<!-- Row 5: Normal Student -->
+<tr class="hover:bg-primary-fixed/10 transition-colors group">
+<td class="sticky left-0 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-sm py-2.5 font-code-md text-code-md font-semibold text-primary">66010204</td>
+<td class="sticky left-24 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-sm py-2.5 whitespace-nowrap font-title-lg text-title-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center text-[10px] font-bold">จ</span>
+<span>นายจิรภัทร ทิพยกานต์</span>
+</div>
+</td>
+<td class="sticky left-[266px] z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-xs py-2.5 text-center shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">ก.4</span>
+</td>
+<!-- Day 1 -->
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<!-- Day 2 -->
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<!-- Day 3 -->
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<!-- Day 4 -->
+<td class="text-center bg-primary-fixed/20"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-primary-fixed/20"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-primary-fixed/40"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-primary-fixed/20"><span class="w-2 h-2 rounded-full bg-outline-variant inline-block"></span></td>
+<!-- Remaining -->
+<td class="text-center" colspan="24">
+<div class="flex items-center justify-around px-2 text-outline-variant text-[10px]">
+<span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span>
+</div>
+</td>
+<td class="sticky right-36 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center font-semibold font-code-md">15/15</td>
+<td class="sticky right-20 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center font-semibold text-primary">100%</td>
+<td class="sticky right-0 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center px-space-xs shadow-[-2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-[11px]">ผ่านเกณฑ์</span>
+</td>
+</tr>
+<!-- Row 6: Risk Watchlist Student 2 -->
+<tr class="hover:bg-error-container/20 transition-colors group">
+<td class="sticky left-0 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-sm py-2.5 font-code-md text-code-md font-semibold text-error">66010245</td>
+<td class="sticky left-24 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-sm py-2.5 whitespace-nowrap font-title-lg text-title-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-error-container text-error flex items-center justify-center text-[10px] font-bold">น</span>
+<span>นายณัฐพงษ์ ภักดีชนก</span>
+</div>
+</td>
+<td class="sticky left-[266px] z-20 bg-surface-container-lowest group-hover:bg-surface-container-low px-space-xs py-2.5 text-center shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">ก.2</span>
+</td>
+<!-- Day 1 -->
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-error font-bold text-xs">✕</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<!-- Day 2 -->
+<td class="text-center"><span class="text-error font-bold text-xs">✕</span></td>
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<!-- Day 3 -->
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-error font-bold text-xs">✕</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-surface-container-low"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<!-- Day 4 -->
+<td class="text-center bg-primary-fixed/20"><span class="text-error font-bold text-xs">✕</span></td>
+<td class="text-center bg-primary-fixed/20"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-primary-fixed/40"><span class="text-primary-container font-bold text-xs">✓</span></td>
+<td class="text-center bg-primary-fixed/20"><span class="w-2 h-2 rounded-full bg-outline-variant inline-block"></span></td>
+<!-- Remaining -->
+<td class="text-center" colspan="24">
+<div class="flex items-center justify-around px-2 text-outline-variant text-[10px]">
+<span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span><span>• • • •</span>
+</div>
+</td>
+<td class="sticky right-36 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center font-semibold text-error font-code-md">11/15</td>
+<td class="sticky right-20 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center font-bold text-error">73.3%</td>
+<td class="sticky right-0 z-20 bg-surface-container-lowest group-hover:bg-surface-container-low text-center px-space-xs shadow-[-2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-error-container text-error font-label-sm text-[11px] font-semibold">เสี่ยงตก</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer & Pagination System -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-md select-none">
+<!-- Showing Range & Page Size -->
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-md text-label-md">
+<span>แสดง 1 - 25 จากทั้งหมด <span class="font-semibold text-on-surface">245</span> รายชื่อ</span>
+<div class="flex items-center gap-1.5 pl-space-xs">
+<span>แสดงหน้าละ:</span>
+<select class="bg-surface-container-lowest text-on-surface font-label-sm text-label-sm px-2 py-1 rounded shadow-xs focus:outline-none">
+<option selected="" value="25">25</option>
+<option value="50">50</option>
+<option value="100">100</option>
+<option value="all">ทั้งหมด</option>
+</select>
+</div>
+</div>
+<!-- Navigation Pagination Buttons -->
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high transition-colors disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">keyboard_double_arrow_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high transition-colors disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold" type="button">1</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" type="button">2</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" type="button">3</button>
+<span class="w-6 text-center text-outline font-label-sm text-label-sm">...</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" type="button">10</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">keyboard_double_arrow_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Editorial Section: Retreat Session Schedule & Proctor Remarks -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+<!-- Schedule Reference Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs text-primary font-title-lg text-title-lg mb-space-xs">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+<span>กำหนดการ 4 รอบประจำวัน</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">เกณฑ์การสแกน: เปิดจุดลงเวลาก่อนเริ่ม 15 นาที และปิดระบบสแกนหลังเริ่ม 10 นาที</p>
+</div>
+<div class="space-y-space-xs pt-space-xs">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low font-label-sm text-label-sm">
+<span class="text-on-surface">รอบที่ 1: ทำวัตรเช้า &amp; นั่งสมาธิ</span>
+<span class="font-code-md text-code-md text-primary font-semibold">04:30 - 06:30 น.</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low font-label-sm text-label-sm">
+<span class="text-on-surface">รอบที่ 2: เดินจงกรม &amp; ปฏิบัติสาย</span>
+<span class="font-code-md text-code-md text-primary font-semibold">08:30 - 11:00 น.</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-primary-fixed/30 font-label-sm text-label-sm text-primary-container font-semibold">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+            รอบที่ 3: ปฏิบัติธรรมบ่าย (ปัจจุบัน)
+          </span>
+<span class="font-code-md text-code-md">13:30 - 16:00 น.</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low font-label-sm text-label-sm">
+<span class="text-on-surface">รอบที่ 4: ทำวัตรเย็น &amp; สนทนาธรรม</span>
+<span class="font-code-md text-code-md text-primary font-semibold">18:30 - 21:00 น.</span>
+</div>
+</div>
+</div>
+<!-- Monastic Guidance & Academic Rules -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-sm">
+<div class="flex items-center gap-space-xs text-primary font-title-lg text-title-lg">
+<span class="material-symbols-outlined text-[20px]">policy</span>
+<span>เกณฑ์การพิจารณาผลการปฏิบัติ</span>
+</div>
+<div class="space-y-space-xs text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<p><span class="font-semibold text-on-surface">ผ่านการประเมิน (S):</span> ต้องเข้าร่วมอย่างน้อย 32 จาก 40 รอบ (80.00%) และส่งสมุดบันทึกอารมณ์ครบทุกวัน</p>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">cancel</span>
+<p><span class="font-semibold text-on-surface">ไม่ผ่านการประเมิน (U):</span> เข้าร่วมไม่ถึง 32 รอบ หรือขาดเกินกว่า 8 รอบโดยไม่มีใบลาจากแพทย์หรืออาจารย์ที่ปรึกษา</p>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">info</span>
+<p><span class="font-semibold text-on-surface">กรณีลาป่วย/ลากิจ:</span> อนุญาตให้ลาได้ไม่เกิน 4 รอบ และต้องทำการปฏิบัติชดเชยตามที่พระวิปัสสนาจารย์กำหนด</p>
+</div>
+</div>
+</div>
+<!-- Quick Action / Proctor Fast Check-in Notice -->
+<div class="bg-primary text-on-primary rounded-xl p-space-lg shadow-md flex flex-col justify-between relative overflow-hidden">
+<div class="space-y-space-xs z-10">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-ping"></span>
+<span>รอบที่ 15 กำลังดำเนินการ</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-primary tracking-tight">เปิดรับสแกนจุดทางเข้าหอธรรม</h2>
+<p class="font-body-sm text-body-sm text-on-primary/80">ระบบจะทำการล็อกผลของรอบที่ 15 อัตโนมัติเวลา 16:15 น. เจ้าหน้าที่สามารถใช้จุดสแกนเคลื่อนที่ช่วยเก็บตกรายชื่อได้</p>
+</div>
+<div class="pt-space-md z-10 flex items-center gap-space-xs">
+<button class="flex-1 py-2 px-space-sm rounded-lg bg-surface-container-lowest text-primary font-label-lg text-label-lg font-semibold hover:bg-surface-container-low transition-colors text-center" type="button">
+          เปิดหน้าต่างสแกนเนอร์
+        </button>
+<button class="p-2 rounded-lg bg-primary-container text-on-primary hover:bg-primary-container/80 transition-colors" title="ตั้งค่าจุดตรวจ" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+<!-- Ambient glow circles -->
+<div class="absolute -right-8 -bottom-8 w-36 h-36 rounded-full bg-primary-container/40 pointer-events-none blur-2xl"></div>
+<div class="absolute -left-8 -top-8 w-32 h-32 rounded-full bg-tertiary-container/30 pointer-events-none blur-xl"></div>
+</div>
+</div>
+</div></main></div></body></html>
