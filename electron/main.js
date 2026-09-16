@@ -142,7 +142,7 @@ async function createMainWindow(port) {
     kiosk: true, // Kiosk mode for barcode station
     autoHideMenuBar: true,
     title: 'ระบบบันทึกเวลาและติดตามการเข้าร่วมโครงการปฏิบัติธรรม (VAS)',
-    icon: path.join(__dirname, '..', 'public', 'icon.ico'),
+    icon: path.join(__dirname, 'icon.ico'),
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
