@@ -26,7 +26,7 @@ function getAvailablePort(startPort) {
 }
 
 // Poll server until ready
-function waitForServer(url, timeoutMs = 45000) {
+function waitForServer(url, timeoutMs = 45000, logFile) {
   const startTime = Date.now();
   return new Promise((resolve, reject) => {
     const check = () => {
@@ -41,7 +41,14 @@ function waitForServer(url, timeoutMs = 45000) {
 
     const retry = () => {
       if (Date.now() - startTime > timeoutMs) {
-        reject(new Error(`Server at ${url} failed to respond within ${timeoutMs}ms`));
+        let errDetails = '';
+        try {
+          if (logFile && fs.existsSync(logFile)) {
+            const content = fs.readFileSync(logFile, 'utf-8');
+            errDetails = '\n\nLog:\n' + content.slice(-400);
+          }
+        } catch (_) {}
+        reject(new Error(`Server at ${url} failed to respond within ${timeoutMs}ms.${errDetails}`));
       } else {
         setTimeout(check, 400);
       }
@@ -81,7 +88,7 @@ function prepareDatabase(appDataDir) {
   return targetDbPath;
 }
 
-async function startServer(port, dbPath) {
+async function startServer(port, dbPath, appDataDir) {
   const env = {
     ...process.env,
     PORT: String(port),
@@ -102,19 +109,29 @@ async function startServer(port, dbPath) {
     throw new Error(`Standalone server script not found: ${serverScript}`);
   }
 
+  const logFile = path.join(appDataDir, 'server.log');
+  const logStream = fs.createWriteStream(logFile, { flags: 'a' });
+
   serverProcess = fork(serverScript, [], {
     env,
     cwd: path.dirname(serverScript),
-    stdio: 'inherit',
+    stdio: ['ignore', 'pipe', 'pipe', 'ipc'],
   });
+
+  if (serverProcess.stdout) serverProcess.stdout.pipe(logStream);
+  if (serverProcess.stderr) serverProcess.stderr.pipe(logStream);
 
   serverProcess.on('error', (err) => {
     console.error('Next.js server process error:', err);
+    try { fs.appendFileSync(logFile, `Server Process Error: ${err.message}\n`); } catch (_) {}
   });
 
   serverProcess.on('exit', (code, signal) => {
     console.log(`Next.js server exited with code: ${code}, signal: ${signal}`);
+    try { fs.appendFileSync(logFile, `Server Exited: code=${code}, signal=${signal}\n`); } catch (_) {}
   });
+
+  return logFile;
 }
 
 async function createMainWindow(port) {
@@ -164,10 +181,10 @@ app.on('ready', async () => {
     const port = await getAvailablePort(DEFAULT_PORT);
 
     console.log(`Starting VAS Server on port ${port} with DB: ${dbPath}`);
-    await startServer(port, dbPath);
+    const logFile = await startServer(port, dbPath, userDataDir);
 
     console.log('Waiting for Next.js server to be ready...');
-    await waitForServer(`http://localhost:${port}/checkin`);
+    await waitForServer(`http://localhost:${port}/checkin`, 45000, logFile);
 
     console.log('Creating Electron Kiosk window...');
     await createMainWindow(port);
