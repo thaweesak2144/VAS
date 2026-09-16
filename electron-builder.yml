@@ -1,0 +1,27 @@
+appId: com.vas.attendance
+productName: VAS Attendance System
+directories:
+  output: dist
+  buildResources: build
+files:
+  - "electron/**/*"
+  - "package.json"
+extraResources:
+  - from: ".next/standalone"
+    to: "standalone"
+    filter:
+      - "**/*"
+  - from: "prisma/dev.db.bak"
+    to: "prisma/dev.db"
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: VAS Attendance System
+  uninstallDisplayName: VAS Attendance System

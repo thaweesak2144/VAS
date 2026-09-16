@@ -1,7 +1,9 @@
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { useSession } from 'next-auth/react';
 import * as XLSX from 'xlsx';
+import { isScanner as checkIsScanner } from '@/lib/permissions';
 
 interface Student {
   id: number;
@@ -12,6 +14,10 @@ interface Student {
 }
 
 export default function StudentsPage() {
+  const { data: authSession } = useSession();
+  const userRole = authSession?.user?.role || 'BACKOFFICE';
+  const isScanner = checkIsScanner(userRole);
+
   const [students, setStudents] = useState<Student[]>([]);
   const [search, setSearch] = useState('');
   const [filterGroup, setFilterGroup] = useState('');
@@ -130,19 +136,25 @@ export default function StudentsPage() {
       <div className="flex justify-between items-center mb-6 flex-wrap gap-3">
         <h1 className="text-2xl font-bold text-text-main">👥 รายชื่อนิสิต ({students.length} คน)</h1>
         <div className="flex gap-2 flex-wrap">
-          <button onClick={() => fileRef.current?.click()}
-            className="bg-white border border-border hover:bg-surface-low text-text-main px-4 py-2 rounded-lg text-sm font-medium transition">
-            📥 Import CSV
-          </button>
-          <input ref={fileRef} type="file" accept=".xlsx,.csv" className="hidden" onChange={handleImport} />
+          {!isScanner && (
+            <>
+              <button onClick={() => fileRef.current?.click()}
+                className="bg-white border border-border hover:bg-surface-low text-text-main px-4 py-2 rounded-lg text-sm font-medium transition">
+                📥 Import CSV
+              </button>
+              <input ref={fileRef} type="file" accept=".xlsx,.csv" className="hidden" onChange={handleImport} />
+            </>
+          )}
           <button onClick={handleExport}
             className="bg-white border border-border hover:bg-surface-low text-text-main px-4 py-2 rounded-lg text-sm font-medium transition">
             📤 ส่งออก Excel
           </button>
-          <button onClick={() => { setShowForm(true); setEditStudent(null); setForm({ studentCode: '', fullName: '', groupName: '' }); }}
-            className="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg text-sm font-medium transition">
-            + เพิ่มนิสิต
-          </button>
+          {!isScanner && (
+            <button onClick={() => { setShowForm(true); setEditStudent(null); setForm({ studentCode: '', fullName: '', groupName: '' }); }}
+              className="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg text-sm font-medium transition">
+              + เพิ่มนิสิต
+            </button>
+          )}
         </div>
       </div>
 
@@ -204,8 +216,14 @@ export default function StudentsPage() {
                 </td>
                 <td className="px-4 py-3 text-center font-semibold">{s._count.attendances}</td>
                 <td className="px-4 py-3 text-center">
-                  <button onClick={() => handleEdit(s)} className="text-blue-600 hover:underline mr-3">แก้ไข</button>
-                  <button onClick={() => handleDelete(s.id, s.fullName)} className="text-red-600 hover:underline">ลบ</button>
+                  {isScanner ? (
+                    <span className="text-xs text-gray-400">ดูข้อมูลเท่านั้น</span>
+                  ) : (
+                    <>
+                      <button onClick={() => handleEdit(s)} className="text-blue-600 hover:underline mr-3">แก้ไข</button>
+                      <button onClick={() => handleDelete(s.id, s.fullName)} className="text-red-600 hover:underline">ลบ</button>
+                    </>
+                  )}
                 </td>
               </tr>
             ))}

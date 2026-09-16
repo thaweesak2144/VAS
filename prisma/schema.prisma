@@ -3,15 +3,17 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Admin {
-  id        Int      @id @default(autoincrement())
-  username  String   @unique
-  password  String   // bcrypt hash, rounds=10
-  createdAt DateTime @default(now())
+  id          Int      @id @default(autoincrement())
+  username    String   @unique
+  password    String   // bcrypt hash, rounds=10
+  displayName String?  // ชื่อเจ้าหน้าที่
+  role        String   @default("BACKOFFICE") // "SCANNER" (เจ้าหน้าที่สแกน) | "BACKOFFICE" (เจ้าหน้าที่หลังบ้าน/แอดมิน)
+  createdAt   DateTime @default(now())
 }
 
 model Student {

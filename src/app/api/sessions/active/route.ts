@@ -1,16 +1,24 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { syncAndGetActiveSession } from '@/lib/autoSession';
 
 export async function GET() {
-  const activeSession = await prisma.session.findFirst({
-    where: { isActive: true },
-    include: {
-      _count: {
-        select: { attendances: true }
+  try {
+    const activeSession = await syncAndGetActiveSession();
+    return NextResponse.json(activeSession || { message: 'No active session' });
+  } catch (error) {
+    console.error('Error in GET /api/sessions/active:', error);
+    // Fallback to direct DB query
+    const fallback = await prisma.session.findFirst({
+      where: { isActive: true },
+      include: {
+        _count: {
+          select: { attendances: true }
+        }
       }
-    }
-  });
-  return NextResponse.json(activeSession || { message: 'No active session' });
+    });
+    return NextResponse.json(fallback || { message: 'No active session' });
+  }
 }
 
 export async function POST(req: Request) {

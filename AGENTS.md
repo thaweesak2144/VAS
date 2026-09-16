@@ -22,10 +22,11 @@ $utf8NoBom = New-Object System.Text.UTF8Encoding $false
 *Never use `Set-Content -Encoding UTF8` as it adds a BOM which breaks Next.js and Prisma.*
 
 ### 2.2 Prisma & Database Rules
-- The database is **SQLite** (`prisma/dev.db`).
-- Do not add features that require advanced PostgreSQL features (e.g., JSONB, Enums) unless migrating.
+- The database is **PostgreSQL** (`vas_db` via `DATABASE_URL`).
+- SQLite snapshot backup is preserved in `prisma/sqlite_backup_snapshot.json` and `prisma/dev.db.bak`.
 - If you modify `schema.prisma`, you MUST run `npx prisma db push` afterward.
 - Keep constraints at the DB level (e.g., `@@unique([studentId, sessionId])` for duplicate check-ins).
+- **STRICT USER/ADMIN PRESERVATION RULE**: NEVER reset, overwrite, or reseed admin usernames or passwords in the database. All user accounts, changed passwords, and roles edited by the user in the database must be preserved PERMANENTLY and must never be touched, modified, or restored to defaults unless explicitly instructed by the user.
 
 ### 2.3 Next.js Rules (App Router)
 - Use Server Components by default. Add `"use client";` only when hooks (`useState`, `useEffect`) or browser APIs are needed.

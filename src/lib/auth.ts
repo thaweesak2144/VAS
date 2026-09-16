@@ -35,7 +35,9 @@ export const authOptions: NextAuthOptions = {
 
         return {
           id: admin.id.toString(),
-          name: admin.username,
+          name: admin.displayName || admin.username,
+          username: admin.username,
+          role: admin.role,
         };
       }
     })
@@ -50,13 +52,16 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
+        token.username = user.username;
+        token.role = user.role;
       }
       return token;
     },
     async session({ session, token }) {
       if (token && session.user) {
-      // @ts-expect-error session.user does not have id by default
-      session.user.id = token.id;
+        session.user.id = token.id as string;
+        session.user.username = token.username as string;
+        session.user.role = token.role as string;
       }
       return session;
     }

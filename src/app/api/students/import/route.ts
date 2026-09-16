@@ -2,10 +2,15 @@ import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
+import { canModifyStudents } from '@/lib/permissions';
 
 export async function POST(req: Request) {
   const session = await getServerSession(authOptions);
   if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
+  if (!canModifyStudents(session.user?.role)) {
+    return NextResponse.json({ error: 'Forbidden: เจ้าหน้าที่สแกนไม่มีสิทธิ์นำเข้ารายชื่อนิสิต' }, { status: 403 });
+  }
 
   try {
     const { students } = await req.json();

@@ -21,9 +21,10 @@
 | Styling | Tailwind CSS | 3.4.x | MIT |
 | Auth | NextAuth.js (JWT + Credentials) | 4.24.x | ISC |
 | ORM | Prisma | 5.22.x | Apache 2.0 |
-| Database | SQLite | built-in | Public Domain |
+| Database | PostgreSQL | 17.x | PostgreSQL License |
 | Export | SheetJS (xlsx) | 0.18.x | Apache 2.0 |
 | Password | bcryptjs | 2.4.x | MIT |
+| Testing | Vitest | 5.x | MIT |
 | Package Manager | npm | 11.x | Artistic-2.0 |
 
 ---
@@ -64,13 +65,22 @@ v2/
 │   │       ├── reports/route.ts
 │   │       ├── mystatus/route.ts
 │   │       ├── admin/cleanup/route.ts
-│   │       └── admin/password/route.ts
+│   │       ├── admin/password/route.ts
+│   │       ├── admin/users/route.ts   # RBAC User management API
+│   │       └── attendance/toggle/route.ts # Manual attendance toggle
 │   ├── lib/
 │   │   ├── prisma.ts          # Prisma client singleton
-│   │   ├── auth.ts            # NextAuth config
-│   │   └── sessions.ts        # ROUNDS constant (4 rounds × 10 days)
+│   │   ├── auth.ts            # NextAuth config + RBAC JWT token handling
+│   │   ├── autoSession.ts     # Automatic session scheduling & activation
+│   │   ├── timeRules.ts       # Centralized time window & late logic
+│   │   ├── permissions.ts     # Centralized RBAC authorization guards
+│   │   ├── sessions.ts        # ROUNDS constant (4 rounds × 10 days)
+│   │   └── __tests__/         # Vitest unit test suites
+│   ├── types/
+│   │   └── next-auth.d.ts     # NextAuth User/Session/JWT type augmentation
 │   ├── middleware.ts           # Route protection /admin/*
 │   └── components/ui/         # (reserved for future shared components)
+├── vitest.config.mts          # Unit testing configuration
 ├── .env                       # DATABASE_URL
 ├── .env.local                 # NEXTAUTH_SECRET, NEXTAUTH_URL
 ├── package.json
@@ -109,7 +119,7 @@ v2/
 
 | Decision | Choice | Rationale |
 |---|---|---|
-| DB | SQLite | Zero-config, single server, easy backup |
+| DB | PostgreSQL | High concurrency, multi-device mobile/web support, zero lock issues |
 | Auth Strategy | JWT (not DB sessions) | Stateless, no extra table needed |
 | Check-in Auth | None (public) | UX: เปิดหน้าจอทิ้งไว้ได้ |
 | Session Uniqueness | 1 Active at a time | Prevent double-counting |
@@ -140,3 +150,18 @@ NEXTAUTH_URL=http://localhost:3000
 | Server ดับ | Check-in หยุด | SQLite WAL mode ป้องกัน corruption, restart ได้ทันที |
 | Network | ไม่มี (localhost) | N/A — 1 เครื่องทำงาน standalone |
 | SIS ล่ม (future) | sync ไม่ได้ | import CSV ด้วยตนเองแทน |
+
+---
+
+## 8. Role-Based Access Control (RBAC) Matrix
+
+| Resource / Capability | BACKOFFICE (ผู้ดูแลระบบ) | SCANNER (เจ้าหน้าที่สแกน) |
+|---|---|---|
+| Scan barcode at `/checkin` | ✅ Allowed | ✅ Allowed |
+| Student Self-Service at `/mystatus` | ✅ Allowed | ✅ Allowed |
+| View sessions overview `/admin/sessions` | ✅ Allowed | ✅ Allowed |
+| View attendance matrix `/admin/reports` | ✅ Allowed | ✅ Allowed (Read-Only) |
+| Toggle cell in matrix `/api/attendance/toggle` | ✅ Allowed | ❌ 403 Forbidden |
+| Manage students `/admin/students` | ✅ Full CRUD | ❌ 403 Forbidden |
+| Manage settings & users `/admin/settings` | ✅ Full CRUD | ❌ 403 Forbidden |
+| Print scan cards `/admin/cards` | ✅ Allowed | ❌ Hidden |

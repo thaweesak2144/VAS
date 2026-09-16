@@ -16,6 +16,7 @@ prisma/dev.db-journal
 
 # Build artifacts
 build/
+dist/
 out/
 .vercel
 

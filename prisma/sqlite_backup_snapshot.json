@@ -1,0 +1,38 @@
+{
+  "exportedAt": "2026-09-16T04:11:37.029Z",
+  "counts": {
+    "admins": 2,
+    "students": 1,
+    "sessions": 0,
+    "attendances": 0
+  },
+  "admins": [
+    {
+      "id": 1,
+      "username": "mcutak",
+      "password": "$2b$10$ooQ8McaLiEBRX86h0rah2udedvaymyBEhkuuNPyHfcC3FSHzNsLfi",
+      "displayName": "devmcu",
+      "role": "BACKOFFICE",
+      "createdAt": "2026-09-06T02:51:53.599Z"
+    },
+    {
+      "id": 2,
+      "username": "mcutak1",
+      "password": "$2b$10$UMk18zB3/Wi51IucS4i2nOlkOrWXTnBmUXLFb3QfzhGHBBPpE8Drm",
+      "displayName": "Scan",
+      "role": "SCANNER",
+      "createdAt": "2026-09-16T03:44:24.981Z"
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "studentCode": "1234",
+      "fullName": "thaweesak",
+      "groupName": "1",
+      "createdAt": "2026-09-06T05:33:23.819Z"
+    }
+  ],
+  "sessions": [],
+  "attendances": []
+}

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { signOut, useSession } from 'next-auth/react';
+import { isScanner as checkIsScanner } from '@/lib/permissions';
 
 const navItems = [
   { href: '/admin/sessions',  icon: 'dashboard',       label: 'ภาพรวมระบบ' },
@@ -16,7 +17,18 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const pathname = usePathname();
   const { data: session } = useSession();
 
+  const userRole = session?.user?.role || 'BACKOFFICE';
+  const isScanner = checkIsScanner(userRole);
+
   if (pathname === '/admin/login') return <>{children}</>;
+
+  // Scanner role only sees sessions overview and reports (read-only), cannot access settings, cards, students
+  const filteredNavItems = navItems.filter(item => {
+    if (isScanner) {
+      return item.href === '/admin/sessions' || item.href === '/admin/reports';
+    }
+    return true;
+  });
 
   return (
     <div className="flex min-h-screen bg-background">
@@ -36,12 +48,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
           {/* Nav label */}
           <div className="px-space-md mb-space-sm">
-            <span className="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-outline">เมนูหลัก</span>
+            <span className="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-outline">
+              {isScanner ? 'เมนูเจ้าหน้าที่สแกน' : 'เมนูหลัก'}
+            </span>
           </div>
 
           {/* Nav items */}
           <nav className="flex flex-col gap-space-2xs px-space-md">
-            {navItems.map(item => {
+            {filteredNavItems.map(item => {
               const active = pathname.startsWith(item.href);
               return (
                 <Link
@@ -122,10 +136,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <div className="flex items-center gap-space-sm">
             <div className="flex flex-col text-right">
               <span className="font-label-lg text-label-lg text-on-surface leading-tight">{session?.user?.name ?? 'Admin'}</span>
-              <span className="font-label-sm text-label-sm text-on-surface-variant">ผู้ดูแลระบบ (Admin)</span>
+              <span className="font-label-sm text-label-sm text-on-surface-variant">
+                {isScanner ? 'เจ้าหน้าที่สแกน (Scanner)' : 'ผู้ดูแลระบบ (Backoffice)'}
+              </span>
             </div>
-            <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center">
-              <span className="material-symbols-outlined text-on-primary text-[18px]">person</span>
+            <div className={`w-9 h-9 rounded-full flex items-center justify-center ${isScanner ? 'bg-[#0284C7]' : 'bg-primary'}`}>
+              <span className="material-symbols-outlined text-on-primary text-[18px]">
+                {isScanner ? 'qr_code_scanner' : 'person'}
+              </span>
             </div>
           </div>
         </header>
