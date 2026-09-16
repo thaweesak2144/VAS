@@ -149,7 +149,7 @@ async function createMainWindow(port) {
     },
   });
 
-  const startUrl = `http://localhost:${port}/checkin`;
+  const startUrl = `http://localhost:${port}/admin/login`;
   console.log('Loading URL in Electron window:', startUrl);
   await mainWindow.loadURL(startUrl);
 
@@ -184,7 +184,7 @@ app.on('ready', async () => {
     const logFile = await startServer(port, dbPath, userDataDir);
 
     console.log('Waiting for Next.js server to be ready...');
-    await waitForServer(`http://localhost:${port}/checkin`, 45000, logFile);
+    await waitForServer(`http://localhost:${port}/admin/login`, 45000, logFile);
 
     console.log('Creating Electron Kiosk window...');
     await createMainWindow(port);
